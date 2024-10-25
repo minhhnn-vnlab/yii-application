@@ -30,6 +30,8 @@ services:
     container_name: postgres
     image: postgres:17.0-alpine3.20
     restart: always
+    ports:
+      - 5435:5435
     environment:
       - POSTGRES_USER=yii2advanced
       - POSTGRES_PASSWORD=secret
