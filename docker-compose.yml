@@ -9,7 +9,7 @@ services:
       - php
     ports: 
       - "8080:8080"
-      - "80:80" 
+      - "8081:80" 
     restart: always
     volumes:
       - ./:/yii-application
@@ -33,9 +33,9 @@ services:
     ports:
       - 5435:5435
     environment:
-      - POSTGRES_USER=yii2advanced
-      - POSTGRES_PASSWORD=secret
-      - POSTGRES_DB=yii2advanced
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
     volumes:
       - vietnamlab_db:/var/lib/postgresql/data
       - ./data:/data
